@@ -1,0 +1,19 @@
+<!-- Show the list of scraped articles -->
+<div class="container">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">Mongo Scraper</a>
+		<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+		<a class="nav-link" href="/saved">Saved Articles</a>
+		<a href="/scrape" role="button" class="btn btn-danger scrapeNew">SCRAPE NEW ARTICLES!</a>
+	</nav>
+	<div id="articles"></div>
+	<div id="notes">
+		{{#each dbArticle}}
+			
+				<p>{{this.title}}</p>
+				<p>This is the summary: {{this.summary}}</p>
+				<button id = "{{this._id}}" data-id="{{this._id}}" class="saveArticle btn btn-success">Save Article!</button>
+			
+		{{/each}}
+	</div>
+</div>
