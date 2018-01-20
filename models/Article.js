@@ -20,7 +20,11 @@ var ArticleSchema = new Schema({
 	note: {
 		type: Schema.Types.ObjectId,
 		ref: "Note"
-	}
+	}/*,
+	url: {
+		type: String,
+		required: true
+	}*/
 });
 
 //Saves the model from the schema above according to the monooose method

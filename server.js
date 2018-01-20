@@ -52,6 +52,9 @@ app.get("/scrape", function(req, res) {
 				.text()
 				.trim();
 			result.status = false;
+/*			result.url = $(this)
+				.children("h2.headline")
+				.attr("href");*/
 
 			//Create new article that is saved in result
 			db.Article

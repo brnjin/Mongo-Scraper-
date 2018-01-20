@@ -1,18 +1,22 @@
 <!-- Show all the save articles  -->
 <div class="container">
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">Mongo Scraper</a>
-		<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-		<a class="nav-link" href="/saved">Saved Articles</a>
-		
-	</nav>
+	<div class="jumbotron">
+	  <h1 class="display-4">Saved Articles</h1>
+	  <p class="lead">Your Saved Articles</p>
+	</div>
 	<div id="articles">
 		{{#each dbArticle}}
-			<p>{{this.title}}</p>
-			<p>This is the summary: {{this.summary}}</p>
-			<button id = "{{this._id}}" data-id="{{this._id}}" class="noteArticle btn btn-success">Article Notes </button>
-			<button id = "{{this._id}}" data-id="{{this._id}}" class="deleteArticle btn btn-danger">Delete!</button>
-			<p id="{{this.id}}">
+			<div class="card">
+			  <h5 class="card-header">{{this.title}}</h5> 
+
+			  <div class="card-body">
+			    <p class="card-text">{{this.summary}}</p>
+				 <button id = "{{this._id}}" data-id="{{this._id}}" class="noteArticle btn btn-success">Article Notes </button>
+				<button id = "{{this._id}}" data-id="{{this._id}}" class="deleteArticle btn btn-danger">Delete Article</button>
+				<p id="{{this.id}}">			    
+			  </div>
+			</div>
+			<br>	
 		{{/each}}
 	</div>
 </div>

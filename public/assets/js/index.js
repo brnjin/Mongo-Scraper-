@@ -16,6 +16,7 @@
 		})
 })*/
 
+
 //onclick function to toggle status 
 $(document).on("click", ".saveArticle", function(event) {
 	event.preventDefault();
@@ -31,4 +32,8 @@ $(document).on("click", ".saveArticle", function(event) {
 	}).then(function() {
 		location.reload()
 	})
+})
+
+$(document).on("click", ".scrapeNew", function(event) {
+	res.redirect("/")
 })
