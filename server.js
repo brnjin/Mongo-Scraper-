@@ -26,9 +26,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 
 //Connect to mongoDB
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/mongoScraper", {
-	useMongoClient: true
-});
+mongoose.connect("mongodb://localhost/mongoScraper");
 
 //Get route to scrape from NY Times
 app.get("/scrape", function(req, res) {
