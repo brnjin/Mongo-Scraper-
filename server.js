@@ -9,7 +9,7 @@ var cheerio = require("cheerio");
 
 var db = require("./models");
 
-var PORT = 3030 || process.env.PORT;
+var PORT = process.env.PORT || 3030;
 
 var app = express();
 
@@ -27,7 +27,9 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 //Connect to mongoDB
 mongoose.Promise = Promise;
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoScraper";
-mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI, {
+	useMongoClient: true
+});
 
 //Get route to scrape from NY Times
 app.get("/scrape", function(req, res) {
