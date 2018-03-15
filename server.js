@@ -57,6 +57,7 @@ app.get("/scrape", function(req, res) {
 				.children("h2.headline")
 				.attr("href");*/
 
+			db.Aritlce.remove({});
 			//Create new article that is saved in result
 			db.Article
 				.create(result)
