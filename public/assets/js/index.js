@@ -35,5 +35,5 @@ $(document).on("click", ".saveArticle", function(event) {
 });
 
 $(document).on("click", ".scrapeNew", function(event) {
-	location.reload();
+	db.Articles.deleteMany({});
 });
