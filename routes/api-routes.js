@@ -17,7 +17,6 @@ module.exports = function(app) {
 		.catch(function(err) {
 			res.json(err)
 		})
-		.remove({})
 
 	});
 
