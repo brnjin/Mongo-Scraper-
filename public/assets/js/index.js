@@ -30,10 +30,10 @@ $(document).on("click", ".saveArticle", function(event) {
 			status: true
 		}
 	}).then(function() {
-		location.reload()
+		location.reload();
 	})
-})
+});
 
 $(document).on("click", ".scrapeNew", function(event) {
-	res.redirect("/")
-})
+	location.reload();
+});
