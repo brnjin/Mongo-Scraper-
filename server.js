@@ -59,7 +59,7 @@ app.get("/scrape", function(req, res) {
 
 			//Create new article that is saved in result
 			db.Article
-				.deleteMany({})
+				.remove({})
 				.create(result)
 				.then(function(dbArticle) {
 					console.log(dbArticle);
