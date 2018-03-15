@@ -71,7 +71,6 @@ app.get("/scrape", function(req, res) {
 		});
 	})
 	location.reload();
-	db.Article.deleteMany({});
 })
 
 require("./routes/api-routes.js")(app);
