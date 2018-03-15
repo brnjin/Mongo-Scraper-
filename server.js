@@ -56,6 +56,7 @@ app.get("/scrape", function(req, res) {
 /*			result.url = $(this)
 				.children("h2.headline")
 				.attr("href");*/
+
 			//Create new article that is saved in result
 			db.Article
 				.create(result)
@@ -68,7 +69,7 @@ app.get("/scrape", function(req, res) {
 				});
 		});
 	})
-	location.reload();
+	res.redirect('/');
 })
 
 require("./routes/api-routes.js")(app);
