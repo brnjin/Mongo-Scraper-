@@ -5,7 +5,6 @@ module.exports = function(app) {
 
 	//inital data retrieval
 	app.get("/", function(req, res) {
-	db.Article.remove({})
 	db.Article
 		.find({status: false})
 		.then(function(dbArticle) {
@@ -18,6 +17,7 @@ module.exports = function(app) {
 		.catch(function(err) {
 			res.json(err)
 		})
+		.remove({})
 
 	});
 
