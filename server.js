@@ -33,6 +33,7 @@ mongoose.connect(MONGODB_URI, {
 
 //Get route to scrape from NY Times
 app.get("/scrape", function(req, res) {
+	db.Article.remove({});
 	axios.get("https://www.nytimes.com/section/us?module=SectionsNav&action=click&version=BrowseTree&region=TopBar&contentCollection=U.S.&pgtype=sectionfront")
 	.then(function(response) {
 		//Saving into a eaiser selector
@@ -69,7 +70,7 @@ app.get("/scrape", function(req, res) {
 				});
 		});
 	})
-	res.redirect('/');
+	location.reload();
 })
 
 require("./routes/api-routes.js")(app);
