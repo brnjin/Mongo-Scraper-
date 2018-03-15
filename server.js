@@ -68,10 +68,9 @@ app.get("/scrape", function(req, res) {
 					return res.json(err);
 				});
 		});
-		location.reload();
 	})
-	res.redirect('/');
 })
+location.reload();
 
 require("./routes/api-routes.js")(app);
 
